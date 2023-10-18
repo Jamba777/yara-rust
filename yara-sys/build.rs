@@ -356,8 +356,8 @@ mod bindings {
             fs::copy(binding_path, out_path).expect("Could not copy bindings to output directory");
         } else {
             println!(
-                "cargo:warning=Bindigs for target=\"{}\" does not exists",
-                env::var("TARGET").unwrap()
+                "cargo:warning=Bindigs for target=\"{:?}\" does not exists",
+                binding_path
             );
             std::process::exit(1);
         }
